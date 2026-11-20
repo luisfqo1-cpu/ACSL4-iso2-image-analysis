@@ -10,4 +10,6 @@ cellpose>=2,<4          # Cellpose 4 removed models.Cellpose / the cyto2 model
 czifile
 tqdm
 
-# Not on PyPI: imagetools (in-house helper package, only needed by circularity.py)
+# Helper package included in this repository (needed by circularity.py).
+# Install from the repository root so the relative path resolves.
+./imagetools

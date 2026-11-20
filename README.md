@@ -24,6 +24,7 @@ Python scripts we used to quantify antibody signal in confocal z-stacks of mouse
 | `t4_KO_eval.py` | The same per-cell pipeline applied to the ACSL4 conditional knock-out (WT vs. KO) with NeuN staining. |
 | `t4_neun_cb1.py` | ACSL4 vs. CB1 in NeuN⁺ cells, split by hippocampal region (e.g. CA3), using precomputed masks. |
 | `circularity.py` | Cell-shape (circularity) analysis from polygon outlines exported to CSV (`circ.csv`, `circ_ko.csv`), plus 5×5 galleries of example cell outlines for each condition. |
+| `imagetools/` | Our helper package (`imagetools.util`) and napari plugin for interactive ROI-based quantification. See [`imagetools/README.md`](imagetools/README.md). A newer, extended version of the plugin is maintained in [luisfqo1-cpu/plugin2025](https://github.com/luisfqo1-cpu/plugin2025). |
 
 ---
 
@@ -45,7 +46,7 @@ Each `.tif` is a 4-D confocal stack with shape **(z, y, x, channel)** and this c
 - NeuN/CB1 dataset: `<region>_…_…_<mouse_id>_….tif`, with masks saved as `<mouse_id>_<region>_masks_neun.npy` / `_masks_dapi.npy`
 
 ### Circularity CSVs
-`circ.csv` / `circ_ko.csv` need a `condition` column and a `polygon_coords` column containing `;`-separated vertices, each a comma-separated list whose last two values are the (row, col) coordinates.
+`circ.csv` / `circ_ko.csv` are exported from napari with the **polygons** widget of [plugin2025](https://github.com/luisfqo1-cpu/plugin2025), after drawing cell outlines on images named `<mouse>_<slice>_<condition>_<antibody>`. They need a `condition` column and a `polygon_coords` column containing `;`-separated vertices, each a comma-separated list whose last two values are the (row, col) coordinates.
 
 ---
 
@@ -97,13 +98,13 @@ Results are appended to `results_inj*.csv` / `results_dapi.csv` after every imag
 ## Requirements
 
 - Python 3.8 – 3.11
-- All PyPI dependencies, with the version ranges the scripts need, are listed in [`requirements.txt`](requirements.txt):
+- All dependencies, with the version ranges the scripts need, are listed in [`requirements.txt`](requirements.txt). This includes the `imagetools` helper package from this repository, so run the command from the repository root:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-- `imagetools` is an in-house helper package that is not on PyPI. Only `circularity.py` needs it (`calculate_bounding_rectangle`, among others).
+- To also use the napari plugin, install `pip install "./imagetools[napari]"` (see [`imagetools/README.md`](imagetools/README.md)).
 
 The scripts run Cellpose on the CPU (`gpu=False`). Set `gpu=True` if a CUDA GPU is available, which is much faster.
 
@@ -127,7 +128,7 @@ If you use this code, please cite: *A druggable moonlighting function of ACSL4 c
 
 ## License
 
-This project is released under the MIT License (see also [`LICENSE`](LICENSE)).
+This project is released under the MIT License (see also [`LICENSE`](LICENSE)). This includes the `imagetools/` package (see [`imagetools/LICENSE`](imagetools/LICENSE)).
 
 ```
 MIT License

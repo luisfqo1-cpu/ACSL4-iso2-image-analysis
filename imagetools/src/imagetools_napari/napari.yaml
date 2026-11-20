@@ -1,0 +1,57 @@
+name: imagetools
+display_name: ImageTools
+contributions:
+  commands:
+    - id: imagetools.get_reader
+      python_name: imagetools._reader:napari_get_reader
+      title: Open data with ImageTools
+    - id: imagetools.offset
+      python_name: imagetools._widget:register_images
+      title: Register Images
+    - id: imagetools.contrast
+      python_name: imagetools._widget:adjust_contrast
+      title: Adjust Contrast
+    - id: imagetools.calc_target_rate
+      python_name: imagetools._widget:calculate_target_rate
+      title: Calculate Target Rate
+    - id: imagetools.convert_shapes_to_labels
+      python_name: imagetools._widget:shapes2labels
+      title: Shapes2Labels
+    - id: imagetools.contours
+      python_name: imagetools._widget:draw_contours
+      title: Draw Contours
+    - id: imagetools.target_intensity
+      python_name: imagetools._widget:calculate_target_intensity
+      title: Calculate Target Intensity
+    - id: imagetools.slider
+      python_name: imagetools._widget:ExampleQWidget
+      title: Slider
+    - id: imagetools.segmentation
+      python_name: imagetools._widget:stardist_segmentation
+      title: Stardist Segmentation
+    - id: imagetools.antibody_intensity
+      python_name: imagetools._widget:calculate_antibody_intensity
+      title: Antibody intensity
+  readers:
+    - command: imagetools.get_reader
+      accepts_directories: false
+      filename_patterns: ['*.npy', '*.nd2']
+  widgets:
+   - command: imagetools.offset
+     display_name: Register Images
+   - command: imagetools.contrast
+     display_name: Adjust Contrast   
+   - command: imagetools.calc_target_rate
+     display_name: Calculate Target Rate
+   - command: imagetools.convert_shapes_to_labels
+     display_name: Shapes2Labels
+   - command: imagetools.contours
+     display_name: Draw Contours
+   - command: imagetools.target_intensity
+     display_name: Calculate Target Intensity
+   - command: imagetools.slider
+     display_name: Slider
+   - command: imagetools.segmentation
+     display_name: Stardist Segmentation
+   - command: imagetools.antibody_intensity
+     display_name: Antibody Intensity
