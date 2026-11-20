@@ -46,7 +46,7 @@ Each `.tif` is a 4-D confocal stack with shape **(z, y, x, channel)** and this c
 - NeuN/CB1 dataset: `<region>_…_…_<mouse_id>_….tif`, with masks saved as `<mouse_id>_<region>_masks_neun.npy` / `_masks_dapi.npy`
 
 ### Circularity CSVs
-`circ.csv` / `circ_ko.csv` need a `condition` column and a `polygon_coords` column containing `;`-separated vertices, each a comma-separated list whose last two values are the (row, col) coordinates.
+`circ.csv` / `circ_ko.csv` are exported from napari with the **polygons** widget of [plugin2025](https://github.com/luisfqo1-cpu/plugin2025), after drawing cell outlines on images named `<mouse>_<slice>_<condition>_<antibody>`. They need a `condition` column and a `polygon_coords` column containing `;`-separated vertices, each a comma-separated list whose last two values are the (row, col) coordinates.
 
 ---
 
