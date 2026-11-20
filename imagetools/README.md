@@ -7,7 +7,7 @@ Helper functions and a [napari](https://napari.org) plugin we used to quantify a
 | Path | What it is |
 |---|---|
 | `src/imagetools/util.py` | Helper functions: ROI cropping (`calculate_bounding_rectangle`, `generate_polygon_mask`, `crop_with_polygon_mask`, `fit_dim`), segmentation (`return_mask` with StarDist or Cellpose, chunked segmentation of large images), per-cell measurements (`calculate_props`, `calculate_rate`, `return_positive_negative_cells`), image registration (`calculate_lag`, `register_image`) and atlas slice matching (`match_atlas`, BrainGlobe) |
-| `src/plugin/` | napari plugin: a reader for `.npy` / `.nd2` files and the widgets listed below |
+| `src/imagetools_napari/` | napari plugin (**ImageTools**): a reader for `.npy` / `.nd2` files and the widgets listed below |
 | `scripts/nd2_npy_converter.py` | Converts every `.nd2` file in a folder (recursively) to `.npy` |
 | `examples/brainreg.json` | Example brainreg registration settings (example mouse atlas, 100 µm) |
 | `examples/target_rate_example.csv` | Example output of *Calculate Target Rate* for hippocampal ROIs |
@@ -40,15 +40,15 @@ pip install "./imagetools[all]"          # + StarDist/Cellpose segmentation and 
 
 Segmentation and atlas matching are optional extras, so `imagetools.util` imports without them. `return_mask` and `match_atlas` need `[segmentation]` and `[atlas]` respectively.
 
-After installing with `[napari]`, the widgets appear under **Plugins → plugin** in napari.
+After installing with `[napari]`, the widgets appear under **Plugins → ImageTools** in napari.
 
 ## Tests
 
 ```bash
 pip install "./imagetools[testing]"
-pytest imagetools/src/plugin/_tests
+pytest imagetools/src/imagetools_napari/_tests
 ```
 
 ## License
 
-`imagetools` is distributed under the BSD-3-Clause license (see [`LICENSE`](LICENSE)). The rest of this repository uses the MIT license.
+`imagetools` is distributed under the MIT license (see [`LICENSE`](LICENSE)), like the rest of this repository.

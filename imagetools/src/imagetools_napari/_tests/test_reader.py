@@ -1,6 +1,6 @@
 import numpy as np
 
-from plugin import napari_get_reader
+from imagetools_napari import napari_get_reader
 
 
 # tmp_path is a pytest fixture

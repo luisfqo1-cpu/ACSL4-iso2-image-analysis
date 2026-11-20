@@ -1,6 +1,6 @@
 import numpy as np
 
-from plugin import ExampleQWidget
+from imagetools_napari import ExampleQWidget
 
 
 # make_napari_viewer is a pytest fixture that returns a napari viewer object

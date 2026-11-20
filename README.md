@@ -128,7 +128,7 @@ If you use this code, please cite: *A druggable moonlighting function of ACSL4 c
 
 ## License
 
-This project is released under the MIT License (see also [`LICENSE`](LICENSE)). The `imagetools/` package keeps its own BSD-3-Clause license (see [`imagetools/LICENSE`](imagetools/LICENSE)).
+This project is released under the MIT License (see also [`LICENSE`](LICENSE)). This includes the `imagetools/` package (see [`imagetools/LICENSE`](imagetools/LICENSE)).
 
 ```
 MIT License
