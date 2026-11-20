@@ -24,7 +24,7 @@ Python scripts we used to quantify antibody signal in confocal z-stacks of mouse
 | `t4_KO_eval.py` | The same per-cell pipeline applied to the ACSL4 conditional knock-out (WT vs. KO) with NeuN staining. |
 | `t4_neun_cb1.py` | ACSL4 vs. CB1 in NeuN⁺ cells, split by hippocampal region (e.g. CA3), using precomputed masks. |
 | `circularity.py` | Cell-shape (circularity) analysis from polygon outlines exported to CSV (`circ.csv`, `circ_ko.csv`), plus 5×5 galleries of example cell outlines for each condition. |
-| `imagetools/` | Our helper package (`imagetools.util`) and napari plugin for interactive ROI-based quantification. See [`imagetools/README.md`](imagetools/README.md). |
+| `imagetools/` | Our helper package (`imagetools.util`) and napari plugin for interactive ROI-based quantification. See [`imagetools/README.md`](imagetools/README.md). A newer, extended version of the plugin is maintained in [luisfqo1-cpu/plugin2025](https://github.com/luisfqo1-cpu/plugin2025). |
 
 ---
 

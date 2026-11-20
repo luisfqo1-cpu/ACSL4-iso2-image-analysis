@@ -2,6 +2,8 @@
 
 Helper functions and a [napari](https://napari.org) plugin we used to quantify antibody staining in brain slices. The analysis scripts in the repository root use `imagetools.util` (for example `circularity.py`). The napari plugin offers the same tools interactively.
 
+> **Newer version:** the plugin is developed further in [luisfqo1-cpu/plugin2025](https://github.com/luisfqo1-cpu/plugin2025), which adds widgets for two-channel and time-series pixel intensity, colocalization, polygon ROIs, zebrafish images and denoising, plus a `.czi` reader. The copy here is the version used for the manuscript and is kept unchanged so the analysis can be reproduced. Its `util.py` matches plugin2025 as of commit [`191162f`](https://github.com/luisfqo1-cpu/plugin2025/tree/191162f8e6c3686c7f55bd0cb728d34196a0cd9c) (27 Oct 2025).
+
 ## Contents
 
 | Path | What it is |
